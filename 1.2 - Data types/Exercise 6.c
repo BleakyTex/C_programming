@@ -1,4 +1,4 @@
-// Calculate 3x^2 - 5x^2 + 6
+// Calculate 3x^3 - 5x^2 + 6
 
 #include <stdio.h>
 
