@@ -1,13 +1,12 @@
 // Rating counter with "infinite" number of responses
 
 #include <stdio.h>
+#include <conio.h>  // for getch() function, though library is obsolete, avoid it
+#include <stdlib.h> // for system() function
 
 int main (void)
 {
-    int  ratingCounters[11], i, response;
-
-    for ( i = 0;  i <= 10;  ++i )
-        ratingCounters[i] = 0;
+    int  ratingCounters[11] = { 0 }, i, response;
 
     while(1) {
         response = 0;  /* for some reason the program accepts
@@ -20,7 +19,7 @@ int main (void)
                           character is entered instead of number
                        */
 
-        system("cls"); // clear the console
+        system("cls"); // clear the console, though using system() is bad practice
         printf ("Enter your response: ");
         scanf ("%i", &response);
 
@@ -38,7 +37,7 @@ int main (void)
     printf ("------ -------------------\n");
 
     for ( i = 1;  i <= 10;  ++i )
-        printf ("%4i%14i\n", i, ratingCounters[i]);
+        printf ("%4i%12i\n", i, ratingCounters[i]);
 
     return 0;
 }
