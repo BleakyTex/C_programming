@@ -26,7 +26,7 @@ int int_size(void)
 
 void bitpat_set(unsigned int *source, unsigned int pattern, int start, int n)
 {
-     unsigned int i, w1, w2, mask = 0;
+     unsigned int i, mask = 0;
      n = n % int_size();
      start = start % int_size();
 
@@ -37,16 +37,11 @@ void bitpat_set(unsigned int *source, unsigned int pattern, int start, int n)
      else
           return;
 
-     w1 = *source;
      pattern &= mask;
      *source &= ~(mask << start);
 
-     w1 = *source;
-     w2 = ~(mask << start);
-
      pattern <<= start;
      *source |= pattern;
-     w1 = *source;
 
      return;
 }
